@@ -1,0 +1,9 @@
+terraform {
+ backend "s3" {
+ bucket = "k21academy-demo"
+ key = "remote-demo.tf"
+ region = "us-east-2"
+ access_key = "<access_key>"
+ secret_key = "<secret_key>"
+ }
+}

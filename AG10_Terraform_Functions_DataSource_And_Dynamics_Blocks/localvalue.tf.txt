@@ -1,0 +1,23 @@
+provider "aws" {
+ region = "ap-south-1"
+ access_key = "AKIAWZHGP5XINLM44ZURK"
+ secret_key = "HHOIGIOskvrt5bEh+hpNnzjyB4d6hIwGHznkoWEDb28"
+}
+locals {
+ common_tags = {
+ Owner = "K21 Team"
+ service = "backend"
+ }
+}
+# Create Ec2 instance
+resource "aws_instance" "lv-instance-1" {
+ ami = "ami-0cda377a1b884a1bc"
+ instance_type = "t2.micro"
+ tags = local.common_tags
+}
+# Create another Ec2 instance
+resource "aws_instance" "lv-instance-2" {
+ ami = "ami-0cda377a1b884a1bc"
+ instance_type = "t2.micro"
+ tags = local.common_tags
+}

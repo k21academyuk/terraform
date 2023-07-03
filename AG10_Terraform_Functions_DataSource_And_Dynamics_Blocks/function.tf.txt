@@ -1,0 +1,27 @@
+locals {
+ time = formatdate("DD MM YYYY hh:mm ZZZ", timestamp())
+}
+variable "region" {
+ default = "us-east-2"
+}
+variable "ami" {
+ type = map
+ default = {
+ "us-east-2" = "ami-07efac79022b86107"
+ "ap-south-1" = "ami-0cda377a1b884a1bc"
+ }
+}
+
+
+resource "aws_instance" "first_instance" {
+ ami = lookup(var.ami, var.region)
+ instance_type = "t2.micro"
+ # tags = {
+ # Name = element(var.tags, count.index)
+ # }
+}
+# Creating an output variable
+output "timestamp" {
+ value = local.time
+}
+

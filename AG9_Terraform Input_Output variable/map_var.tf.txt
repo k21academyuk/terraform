@@ -1,0 +1,14 @@
+# Create Ec2 instance
+resource "aws_instance" "web" {
+ ami = "ami-0cda377a1b884a1bc"
+ instance_type = var.types["ap-south-1"]
+}
+# Create map variable
+variable "types"{
+ type = map
+ default = {
+ us-east-1 = "t2.small"
+ us-east-2 = "t2.nano"
+ ap-south-1 = "t2.micro"
+ }
+}

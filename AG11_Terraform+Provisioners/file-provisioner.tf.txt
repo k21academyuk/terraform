@@ -1,0 +1,22 @@
+provider "aws" {
+ region = "us-east-2"
+ access_key = "xyz"
+ secret_key = "xyz"
+}
+
+
+resource "aws_instance" "my_ec2" {
+ ami = "ami-07efac79022b86107"
+ instance_type = "t2.micro"
+
+connection {
+ type = “ssh”
+ user = “ec2-user”
+ private_key = file(”./k21academy.pem”)
+ host = aws_instance.my_ec2.public_ip
+}
+provisioner “file” {
+ source = ”./file.txt”
+ destination = “/tmp/file.txt”
+}
+}

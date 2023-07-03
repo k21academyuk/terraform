@@ -1,0 +1,23 @@
+# Creating region variable
+variable “region”
+{
+default = “us-east-2”
+}
+# Creating instance ami_id variable
+variable “ami_id”{
+default = “ami-0010d386b82bc06f0”
+}
+# Creating instance type variable
+variable “instancetype”
+{
+default = “t2.micro”
+}
+# Creating vpc cidr_block varaible
+variable “vpv_cidr”{
+default = “10.0.0.0/16”
+
+support@k21academy.com 7
+}
+# Creating subnet_cidr variable
+variable “subnet_cidr”{
+default = “10.0.1.0/24”

@@ -1,0 +1,17 @@
+provider "aws" {
+ region = "us-east-2"
+ access_key = "xyz"
+ secret_key = "xyz"
+}
+
+resource "aws_instance" "name" {
+ ami = "ami id"
+ instance_type = "type"
+
+
+tags = {
+ Name = "my-first-instance"
+ }
+
+}
+
