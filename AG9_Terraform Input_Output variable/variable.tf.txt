@@ -16,7 +16,6 @@ default = “t2.micro”
 variable “vpv_cidr”{
 default = “10.0.0.0/16”
 
-support@k21academy.com 7
 }
 # Creating subnet_cidr variable
 variable “subnet_cidr”{
