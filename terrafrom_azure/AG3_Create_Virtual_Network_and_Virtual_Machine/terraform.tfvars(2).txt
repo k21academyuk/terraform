@@ -1,0 +1,3 @@
+resourceGroupName = "TFAzureLab-rg"
+location = "eastus"
+network_interface_id = " /subscriptions/37bd7d20-55c0-418f-8777-4956aaee0669/resourceGroups/TFAzureLabrg/providers/Microsoft.Network/networkInterfaces/myNIC"

@@ -1,0 +1,10 @@
+resource "azurerm_virtual_network" "Tf-Vnet" {
+ name = "tf-vnet"
+ location = var.location
+ resource_group_name = var.rg-name
+ address_space = var.address_space
+ subnet {
+ name = var.subnet_name
+ address_prefixes = var.subnet_prefix
+ }
+}
