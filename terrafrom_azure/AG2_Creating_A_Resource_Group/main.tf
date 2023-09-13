@@ -1,8 +1,4 @@
-variable "resourceGroupName" {
- type = string
- description = "name of resource group"
-}
-variable "location" {
- type = string
- description = "location of your resource group"
+resource "azurerm_resource_group" "TFAzureLab-RG" {
+    name     = "TFAzureLab-rg"
+    location = "eastus"
 }
