@@ -2,18 +2,22 @@ terraform {
  required_providers {
  azurerm = {
  source = "hashicorp/azurerm"
- version = "3.53.0"
+ version = "4.10.0"
  }
  }
 }
 provider "azurerm" {
  # Configuration options
+ features {
+   
+ }
+ subscription_id = "<>"
 }
 
 resource "azurerm_virtual_network" "TFAzure-vnet" {
  name = "tfAzure-vnet"
  location = var.location
- resource_group_name = var.rg-name.name
+ resource_group_name = var.rg-name
  address_space = ["10.0.0.0/16"]
  dynamic "subnet" {
  for_each = var.subnet_data
@@ -25,5 +29,5 @@ resource "azurerm_virtual_network" "TFAzure-vnet" {
 }
 
 output "subnets-address" {
- value = azurerm_virtual_network.TFAzurevnet.subnet[*].address_prefix
+ value = azurerm_virtual_network.TFAzure-vnet.subnet[*].address_prefixes
 }
